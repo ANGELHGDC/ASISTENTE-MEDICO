@@ -1,7 +1,6 @@
 {
   "name": "asistente-medico",
   "version": "1.0.0",
-  "description": "Servidor para asistente médico virtual con OpenAI",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -10,6 +9,7 @@
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "openai": "^4.25.1"
+    "openai": "^4.0.0"
   }
+}
 }
