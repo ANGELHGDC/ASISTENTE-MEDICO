@@ -1,4 +1,3 @@
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -22,7 +21,7 @@ app.post("/chat", async (req, res) => {
       messages: [
         {
           role: "system",
-          content: "Eres un asistente médico virtual. Haces triaje y das educación médica. No das diagnósticos.",
+          content: "Eres un asistente médico virtual. Realizas triaje y das información médica clara. No das diagnósticos.",
         },
         {
           role: "user",
@@ -32,13 +31,13 @@ app.post("/chat", async (req, res) => {
     });
 
     res.json({ reply: response.data.choices[0].message.content });
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Error al procesar la solicitud");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error al conectarse con OpenAI.");
   }
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en puerto ${PORT}`);
+  console.log(`Servidor iniciado en http://localhost:${PORT}`);
 });
